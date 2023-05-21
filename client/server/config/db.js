@@ -9,9 +9,12 @@ const connectToMongo = async ()=>{
     try{
         const res = await mongoose.connect(URI);
         if(res){
-            console.log("Database connected successfully")
+            console.log("Database connected successfully");
         }
-    } catch(error){
+        else{
+            console.log("Some error occured while connecting to the Database");
+        }
+    }catch(error){
         console.log(error);
     }
 }
